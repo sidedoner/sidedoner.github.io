@@ -7,22 +7,28 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('🚀 Side Döner P.C. - Seite geladen');
     
     // 1. Links zu Buttons zuweisen
-    if (typeof SOCIAL_LINKS !== 'undefined') {
+    if (typeof socialLinks !== 'undefined' && typeof serviceLinks !== 'undefined') {
         const linkMapping = {
-            'link-location': SOCIAL_LINKS.location,
-            'link-rating': SOCIAL_LINKS.rating,
-            'link-facebook': SOCIAL_LINKS.facebook,
-            'link-instagram': SOCIAL_LINKS.instagram,
-            'link-tiktok': SOCIAL_LINKS.tiktok,
-            'link-website': SOCIAL_LINKS.website,
-            'link-order': SOCIAL_LINKS.order
+            'link-location': serviceLinks.googleMaps,
+            'link-rating': serviceLinks.rating,
+            'link-facebook': socialLinks.facebook,
+            'link-instagram': socialLinks.instagram,
+            'link-tiktok': socialLinks.tiktok,
+            'link-website': serviceLinks.website,
+            'link-order': serviceLinks.wolt
         };
         
         Object.keys(linkMapping).forEach(function(id) {
             const element = document.getElementById(id);
-            if (element && linkMapping[id]) {
-                element.href = linkMapping[id];
+            if (!element) {
+                console.error('❌ Element not found: #' + id);
+                return;
             }
+            if (!linkMapping[id]) {
+                console.warn('⚠️ Missing link for: ' + id);
+                return;
+            }
+            element.href = linkMapping[id];
         });
     }
     
@@ -31,7 +37,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeNoticeBtn = document.getElementById('close-notice');
     
     if (infoNotice && closeNoticeBtn) {
-        const noticeClosed = localStorage.getItem('infoNoticeClosed');
+        const hasLocalStorage = (() => {
+            try {
+                const test = '__test__';
+                localStorage.setItem(test, test);
+                localStorage.removeItem(test);
+                return true;
+            } catch (e) {
+                return false;
+            }
+        })();
+
+        const noticeClosed = hasLocalStorage ? localStorage.getItem('infoNoticeClosed') : false;
         
         // Hinweis ausblenden, wenn bereits geschlossen
         if (noticeClosed === 'true') {
@@ -43,16 +60,20 @@ document.addEventListener('DOMContentLoaded', function() {
         closeNoticeBtn.addEventListener('click', function() {
             infoNotice.classList.add('hidden');
             document.body.classList.add('no-notice');
-            localStorage.setItem('infoNoticeClosed', 'true');
+            if (hasLocalStorage) {
+                localStorage.setItem('infoNoticeClosed', 'true');
+            }
             console.log('✅ Hinweis geschlossen');
         });
         
         // Automatisches Schließen nach 10 Sekunden
         setTimeout(function() {
-            if (!infoNotice.classList.contains('hidden') && !localStorage.getItem('infoNoticeClosed')) {
+            if (!infoNotice.classList.contains('hidden')) {
                 infoNotice.classList.add('hidden');
                 document.body.classList.add('no-notice');
-                localStorage.setItem('infoNoticeClosed', 'true');
+                if (hasLocalStorage) {
+                    localStorage.setItem('infoNoticeClosed', 'true');
+                }
                 console.log('⏰ Hinweis automatisch geschlossen');
             }
         }, 10000);
