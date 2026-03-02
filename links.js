@@ -1,32 +1,32 @@
-/**
- * links.js
- * Alle Social-Media-Links und Website-Verlinkungen
- */
-
-const SOCIAL_LINKS = {
-    // Geschäftsinformationen (Impressum)
-    business: {
-        name: "Side Döner P.C.",
-        owner: "Mahsum Gülec",
-        address: "Paunsdorfer Allee 1, 04329 Leipzig",
-        phone: "+49 1577 7788889",
-        email: "mahsumguelec@gmail.com",
-        steuernummer: "232/226/10273"
-    },
-    
-    // Website- und Kartenlinks
-    location: "https://maps.app.goo.gl/DHLvFq7YiS4EtyeZ7",
-    rating: "https://maps.app.goo.gl/DHLvFq7YiS4EtyeZ7",
-    
-    // Social-Media-Links
-    facebook: "https://www.facebook.com/share/1HgufB2S3v/",
-    instagram: "https://www.instagram.com/sideleipzig_p.c",
-    tiktok: "https://www.tiktok.com/@side_doner",
-    
-    // Website- und Bestelllinks
-    website: "https://sidedoener-leipzig.de/",
-    order: "https://wolt.com/de/deu/leipzig/restaurant/side-doener-paunsdorf-center"
+// Side Döner P.C. - Links Configuration
+const businessInfo = {
+    name: "Side Döner P.C.",
+    owner: "Mahsum Gülec",
+    address: "Paunsdorfer Allee 1, 04329 Leipzig",
+    phone: "+49 341 91877384",
+    email: "mahsumguelec@gmail.com",
+    ustIdNr: "DE405510026"
 };
 
-// Automatisches Laden
-console.log('🔗 Side Döner Links geladen');
+const socialLinks = {
+    facebook: "https://www.facebook.com/share/1GRzvUERdf/",       // Offizielle Facebook-Seite (Link wird aktualisiert sobald 25 Follower erreicht)
+    instagram: "https://www.instagram.com/sideleipzig_p.c",        // Offizielle Instagram-Seite
+    tiktok: "https://www.tiktok.com/@side_doner"                   // Offizielle TikTok-Seite
+};
+
+const serviceLinks = {
+    googleMaps: "https://maps.app.goo.gl/e7tAMWdscaDBwMCv5",      // Google Maps Standort
+    rating: "https://g.page/r/Ce4sF7XVVnGaEBM/review",            // Google Bewertungslink
+    website: "https://sidedoener-leipzig.de",                       // Offizielle Website
+    wolt: "https://wolt.com/de/deu/leipzig/restaurant/side-doener-paunsdorf-center" // Wolt Bestellplattform
+};
+
+const legalLinks = {
+    impressum: "./impressum.html",    // Impressum-Seite
+    datenschutz: "./datenschutz.html" // Datenschutzerklärung-Seite
+};
+
+// Export for use in other scripts if needed
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { businessInfo, socialLinks, serviceLinks, legalLinks };
+}
