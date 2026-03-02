@@ -11,11 +11,14 @@
     <meta name="author" content="Side Döner P.C.">
     <meta name="theme-color" content="#0a0a0a">
     
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://sidedoener-leipzig.de/">
+    
     <!-- Open Graph Meta Tags für Social Media Sharing -->
     <meta property="og:title" content="Side Döner P.C. | Leipzig Paunsdorf">
     <meta property="og:description" content="Besuchen Sie unseren Standort und folgen Sie uns auf Social Media">
-    <meta property="og:image" content="./logo.webp">
-    <meta property="og:url" content="./">
+    <meta property="og:image" content="https://sidedoener-leipzig.de/logo.webp">
+    <meta property="og:url" content="https://sidedoener-leipzig.de/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Side Döner P.C.">
     
@@ -23,7 +26,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Side Döner P.C. | Leipzig Paunsdorf">
     <meta name="twitter:description" content="Besuchen Sie unseren Standort und folgen Sie uns auf Social Media">
-    <meta name="twitter:image" content="./logo.webp">
+    <meta name="twitter:image" content="https://sidedoener-leipzig.de/logo.webp">
     
     <!-- Favicon und App Icons -->
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
@@ -41,17 +44,52 @@
     
     <!-- Hauptstylesheet -->
     <link rel="stylesheet" href="./style.css">
+    
+    <!-- Structured Data für Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Side Döner P.C.",
+      "image": "https://sidedoener-leipzig.de/logo.webp",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Paunsdorfer Allee 1",
+        "addressLocality": "Leipzig",
+        "postalCode": "04329",
+        "addressCountry": "DE"
+      },
+      "telephone": "+49 341 91877384",
+      "priceRange": "€€",
+      "servesCuisine": ["Türkisch", "Döner"],
+      "url": "https://sidedoener-leipzig.de",
+      "hasMap": "https://maps.app.goo.gl/e7tAMWdscaDBwMCv5",
+      "sameAs": [
+        "https://www.facebook.com/share/1GRzvUERdf/",
+        "https://www.instagram.com/sideleipzig_p.c",
+        "https://www.tiktok.com/@side_doner"
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "opens": "10:00",
+          "closes": "20:00"
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Informationshinweis ohne Cookie-Consent -->
     <div id="info-notice" class="info-notice">
         <div class="info-content">
             <div class="info-text">
-                <i class="fas fa-info-circle"></i>
+                <i class="fas fa-info-circle" aria-hidden="true"></i>
                 <p>Diese Seite ist eine reine Link-Sammlung. Wir verwenden <strong>keine Tracking-Cookies</strong> und sammeln <strong>keine personenbezogenen Daten</strong>. Details: <a href="./datenschutz.html">Datenschutzerklärung</a></p>
             </div>
             <button id="close-notice" class="info-close" aria-label="Hinweis schließen">
-                <i class="fas fa-times"></i>
+                <i class="fas fa-times" aria-hidden="true"></i>
             </button>
         </div>
     </div>
@@ -59,14 +97,14 @@
     <!-- Kopfbereich mit Logo und Cover -->
     <header>
         <div class="cover">
-            <img src="./cover.webp" alt="Side Döner Cover" class="cover-img">
+            <img src="./cover.webp" width="1200" height="220" alt="Side Döner Cover" class="cover-img" fetchpriority="high">
         </div>
         <div class="logo-container">
-            <img src="./logo.webp" alt="Side Döner Logo" class="logo">
+            <img src="./logo.webp" loading="lazy" width="120" height="120" alt="Side Döner Logo" class="logo">
         </div>
         <h1>Side Döner P.C.</h1>
         <p class="address">
-            <i class="fas fa-location-dot"></i> Paunsdorfer Allee 1, 04329 Leipzig
+            <i class="fas fa-location-dot" aria-hidden="true"></i> Paunsdorfer Allee 1, 04329 Leipzig
         </p>
     </header>
 
@@ -75,36 +113,36 @@
         <div class="buttons-container">
             <!-- Standort und Bewertung -->
             <a href="#" id="link-location" target="_blank" rel="noopener noreferrer" class="btn btn-location">
-                <i class="fas fa-map-location-dot"></i>
+                <i class="fas fa-map-location-dot" aria-hidden="true"></i>
                 <span>Unser Standort</span>
             </a>
             
             <a href="#" id="link-rating" target="_blank" rel="noopener noreferrer" class="btn btn-rating">
-                <i class="fas fa-star"></i>
+                <i class="fas fa-star" aria-hidden="true"></i>
                 <span>Jetzt Bewerten</span>
             </a>
 
             <!-- Social Media Links -->
             <a href="#" id="link-facebook" target="_blank" rel="noopener noreferrer" class="btn btn-facebook">
-                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-facebook-f" aria-hidden="true"></i>
                 <span>Facebook</span>
             </a>
             <a href="#" id="link-instagram" target="_blank" rel="noopener noreferrer" class="btn btn-instagram">
-                <i class="fab fa-instagram"></i>
+                <i class="fab fa-instagram" aria-hidden="true"></i>
                 <span>Instagram</span>
             </a>
             <a href="#" id="link-tiktok" target="_blank" rel="noopener noreferrer" class="btn btn-tiktok">
-                <i class="fab fa-tiktok"></i>
+                <i class="fab fa-tiktok" aria-hidden="true"></i>
                 <span>TikTok</span>
             </a>
 
             <!-- Website und Online Bestellung -->
             <a href="#" id="link-website" target="_blank" rel="noopener noreferrer" class="btn btn-website">
-                <i class="fas fa-globe"></i>
+                <i class="fas fa-globe" aria-hidden="true"></i>
                 <span>Offizielle Website</span>
             </a>
             <a href="#" id="link-order" target="_blank" rel="noopener noreferrer" class="btn btn-order">
-                <i class="fas fa-utensils"></i>
+                <i class="fas fa-utensils" aria-hidden="true"></i>
                 <span>Online Bestellen</span>
             </a>
         </div>
