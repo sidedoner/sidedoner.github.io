@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /fontawesome/
 
-Sitemap: https://dein-username.github.io/dein-repo/sitemap.xml
+Sitemap: https://sidedoner.github.io/sitemap.xml
