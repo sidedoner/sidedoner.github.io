@@ -358,6 +358,9 @@ main {
 .btn-order {
     background: var(--btn-order);
 }
+.btn-menu {
+    background: linear-gradient(135deg, #0d8a8a, #0a6060);
+}
 
 /* ===============================================
    FUßBEREICH
