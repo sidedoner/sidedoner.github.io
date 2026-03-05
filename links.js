@@ -18,7 +18,8 @@ const serviceLinks = {
     googleMaps: "https://maps.app.goo.gl/e7tAMWdscaDBwMCv5",      // Google Maps Standort
     rating: "https://g.page/r/Ce4sF7XVVnGaEBM/review",            // Google Bewertungslink
     website: "https://sidedoener-leipzig.de",                       // Offizielle Website
-    wolt: "https://wolt.com/de/deu/leipzig/restaurant/side-doener-paunsdorf-center" // Wolt Bestellplattform
+    wolt: "https://wolt.com/de/deu/leipzig/restaurant/side-doener-paunsdorf-center", // Wolt Bestellplattform
+menu: "https://sidedoner.github.io/menu.html" // Speisekarte
 };
 
 const legalLinks = {
