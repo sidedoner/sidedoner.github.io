@@ -10,12 +10,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (typeof socialLinks !== 'undefined' && typeof serviceLinks !== 'undefined') {
         const linkMapping = {
             'link-location': serviceLinks.googleMaps,
-            'link-rating': serviceLinks.rating,
+            'link-rating':   serviceLinks.rating,
             'link-facebook': socialLinks.facebook,
-            'link-instagram': socialLinks.instagram,
-            'link-tiktok': socialLinks.tiktok,
-            'link-website': serviceLinks.website,
-            'link-order': serviceLinks.wolt
+            'link-instagram':socialLinks.instagram,
+            'link-tiktok':   socialLinks.tiktok,
+            'link-website':  serviceLinks.website,
+            'link-menu':     serviceLinks.menu,
+            'link-order':    serviceLinks.wolt
         };
         
         Object.keys(linkMapping).forEach(function(id) {
